@@ -1,3 +1,9 @@
+"""
+OOP - advance
+Exerciții - studiu în workshopul de weekend
+"""
+
+
 # def calculeaza_suma(a, b):
 #     return a + b
 
@@ -18,9 +24,6 @@
 
 
 '''
-OOP - advance
-Exerciții - studiu în workshopul de weekend
-
 1. ABSTRACTION Clasa abstractă FormaGeometrica
 Conține un field PI=3.14 Conține o metodă abstractă aria (opțional)
 Conține o metodă a clasei descrie() - aceasta printează pe ecran ‘Cel mai probabil am colturi’

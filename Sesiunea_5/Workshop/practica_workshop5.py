@@ -1,3 +1,7 @@
+"""
+Exercitii workshop 5
+"""
+
 '''
 Design Patterns. Iterators, Generators, Decorators
 '''

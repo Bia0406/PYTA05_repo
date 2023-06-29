@@ -1,6 +1,7 @@
 """
 Partea 1 - Structuri de date
 Exerciții - studiu în workshopul de weekend
+
 Pentru toate exercițiile se va folosi noțiunea de if în rezolvare.
 Indirect vei exersa și operatorii în cadrul condițiilor ramurilor din if.
 X poate fi inițializat direct în cod sau citit de la tastatură, după preferințe. X este un int.

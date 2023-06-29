@@ -1,3 +1,8 @@
+""""
+Exercitii workshop 3
+"""
+
+
 '''
 1.Funcție care să calculeze și să returneze suma a două numere
 '''
