@@ -46,15 +46,15 @@ Swift
 Display the new contents of the file.
 '''
 
-
-def write_read_file(hello_txt):
-    with open("hello.txt", "a") as file:
-        file.writelines([
-            "Go\n"
-            "Kotlin\n"
-            "Swift\n"
-        ]
-    )
+#
+# def write_read_file(hello_txt):
+#     with open("hello.txt", "a") as file:
+#         file.writelines([
+#             "Go\n"
+#             "Kotlin\n"
+#             "Swift\n"
+#         ]
+#     )
 
 #
 # f = open("hello.txt", "r")
