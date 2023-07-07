@@ -1,11 +1,6 @@
 """
-Exercitii workshop 6
+Exercitii workshop 6 - Part 1 - Pachete python. Interacțiune cu fișiere.
 """
-
-'''
-Pachete python. Interacțiune cu fișiere.
-'''
-
 
 '''
 1. Create a text file called “hello.txt” and add the following text inside of it: 
@@ -193,79 +188,3 @@ Python’s standard JSON module):
 #
 # scriere_in_fisier_json("students.json", students)
 
-
-'''
-7. Create a new PyCharm project. Make sure it has a virtualenv. Install all the
-following packages from PYPI:
-behave
-behave-html-formatter
-requests
-selenium
-webdriver-manager
-Use pip to create a `requirements.txt` file. Send your project to a colleague
-and ask them to install all dependencies using pip.
-'''
-
-
-
-
-'''
-SQL
-'''
-
-'''
-1. Write a SQL statement to create a table called continents, 
-with the following columns: a. continent_id b. continent_name c. continent_code – 2 letters code, use this link
-'''
-
-
-
-
-'''
-2. Using the link above, write all SQL statements needed to add all the seven continents (INSERT).
-'''
-
-
-
-'''
-3. Write a SQL statement to create a table called countries, with the following columns: a. country_code – 2 letters code 
-(e.g. RO, US, IT, etc) b. country_name c. continent_id – foreign key d. population – number
-'''
-
-
-
-'''
-4. Write a few SQL statements to add some countries. Here is a list of countries with their codes. Feel free to invent or 
-approximate their populations, and use your geography knowledge for their continent. Add at least 10 countries, as diverse 
-as possible (INSERT). Examples: – Romania, EU, 19mil – USA, NA, 330mil – France, EU, 70mil – Hungary, EU, 9mil – Canada, 
-NA, 40mil – China, AS, 1450mil – Belgium, EU, 12mil – Egypt, AF, 110mil – Australia, OC, 25mil
-'''
-
-
-
-
-'''
-5. Write a SQL statement to select all countries, ordered by name. Write another statement to count them all.
-'''
-
-
-'''
-6. Write a SQL statement to select only countries with a population greater than 20 millions.
-'''
-
-
-
-'''
-7. Write a SQL statement to select only countries that start with a certain letter (choose one that exists for you, e.g.
- C in the example above).
-'''
-
-
-'''
-8. Write a SQL statement that groups all countries by continents, and counts them.
-'''
-
-
-'''
-9. Write a SQL statement that groups all countries by continent, and computes the total population per continent (SUM).
-'''

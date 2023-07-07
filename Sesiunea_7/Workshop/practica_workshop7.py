@@ -1,4 +1,0 @@
-"""
-Exercitii workshop 7
-"""
-
