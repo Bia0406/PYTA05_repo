@@ -6,22 +6,22 @@ continent_id
 continent_name
 continent_code – 2 letters code, use this link: https://datahub.io/core/continent-codes
 """
-connection = sqlite3.connect("continents.db")
 
-cursor = connection.cursor()
+# connection = sqlite3.connect("continents_practice1.db")
+# cursor = connection.cursor()
 
 
 # cursor.execute(
 #     """
 #     CREATE TABLE IF NOT EXISTS continents (
 #     continent_id INTEGER PRIMARY KEY AUTOINCREMENT,
-#     continent_name VARCHAR,
-#     continent_code VARCHAR(2) DEFAULT 'https://datahub.io/core/continent-codes'
+#     continent_name TEXT NOT NULL,
+#     continent_code CHAR(2) NOT NULL
 #     );
 #     """
 # )
-#
-#
+
+
 # connection.commit()
 
 
@@ -29,23 +29,25 @@ cursor = connection.cursor()
 2. Using the link above, write all SQL statements needed to add all the seven continents (INSERT).
 """
 
-# connection = sqlite3.connect("continents.db")
-#
+# connection = sqlite3.connect("continents_practice1.db")
+
 # cursor = connection.cursor()
+
 # continent_query = """
 # INSERT INTO continents (continent_name, continent_code)
 # VALUES (?, ?);
 # """
 # continents = [
-#     ('AF', 'Africa'),
-#     ('NA', 'North America'),
-#     ('OC', 'Oceania'),
-#     ('AN', 'Antarctica'),
-#     ('EU', 'Europe'),
-#     ('SA', 'South America')
-#
+#     ('Africa', 'AF'),
+#     ('North America', 'NA'),
+#     ('Oceania', 'OC'),
+#     ('Antarctica', 'AN'),
+#     ('Asia', 'AS'),
+#     ('Europe', 'EU'),
+#     ('South America', 'SA')
+
 # ]
-#
+
 # cursor.executemany(continent_query, continents)
 # connection.commit()
 
@@ -58,23 +60,23 @@ continent_id – foreign key
 population – number
 """
 
-# connection = sqlite3.connect("continents.db")
-#
+# connection = sqlite3.connect("continents_practice1.db")
+
 # cursor = connection.cursor()
-#
+
 # cursor.execute(
 #     """
 #     CREATE TABLE IF NOT EXISTS countries (
-#     country_code VARCHAR(2),
-#     country_name VARCHAR,
-#     country_id INTEGER PRIMARY KEY AUTOINCREMENT,
-#     population TEXT NOT NULL,
-#     FOREIGN KEY (country_id) REFERENCES continents(id)
+#     country_code CHAR(2) NOT NULL,
+#     country_name TEXT NOT NULL,
+#     continent_id INTEGER NOT NULL,
+#     population INTEGER NOT NULL,
+#     FOREIGN KEY (continent_id) REFERENCES continents(continent_id)
 #     );
 #     """
 # )
-#
-#
+
+
 # connection.commit()
 
 
@@ -95,25 +97,25 @@ Add at least 10 countries, as diverse as possible (INSERT). Examples:
 """
 
 
-# connection = sqlite3.connect("continents.db")
-#
+# connection = sqlite3.connect("continents_practice1.db")
+
 # cursor = connection.cursor()
-# #
+
 # country_query = """
-# INSERT INTO countries (country_code, country_name, population)
-# VALUES (?, ?, ?);
+# INSERT INTO countries (country_code, country_name, continent_id, population)
+# VALUES (?, ?, ?, ?);
 # """
 # countries = [
-#     ('EU', 'Romania', '19mil'),
-#     ('NA', 'USA', '330mil'),
-#     ('EU', 'France', '70mil'),
-#     ('EU', 'Hungary', '9mil'),
-#     ('NA', 'Canada', '40mil'),
-#     ('AS', 'China', '1450mil'),
-#     ('EU', 'Belgium', '12mil'),
-#     ('AF', 'Egypt', '110mil'),
-#     ('OC', 'Australia', '25mil'),
-#     ('EU', 'Portugal', '10mil')
+#     ('RO', 'Romania', 6, 19000000),
+#     ('US', 'USA', 2, '330000000'),
+#     ('FR', 'France', 6, '70000000'),
+#     ('HU', 'Hungary', 6, '9000000'),
+#     ('CA', 'Canada', 2, 40000000),
+#     ('CN', 'China', 5, 1450000000),
+#     ('BE', 'Belgium', 6, 12000000),
+#     ('EG', 'Egypt', 5, 110000000),
+#     ('AU', 'Australia', 1, 25000000),
+#     ('PT', 'Portugal', 6, 10000000)
 # ]
 #
 # cursor.executemany(country_query, countries)
@@ -123,6 +125,10 @@ Add at least 10 countries, as diverse as possible (INSERT). Examples:
 """
 5. Write a SQL statement to select all countries, ordered by name. Write another statement to count them all.
 """
+
+# connection = sqlite3.connect("continents_practice1.db")
+
+# cursor = connection.cursor()
 
 # cursor.execute("""
 # SELECT country_name FROM countries
@@ -148,14 +154,15 @@ Add at least 10 countries, as diverse as possible (INSERT). Examples:
 
 # cursor.execute("""
 # SELECT country_name FROM countries
-# WHERE population > '20mil';
+# WHERE population > 20000000;
 # """)
 #
 # population_countries = cursor.fetchall()
 # print(population_countries)
 
 """
-7. Write a SQL statement to select only countries that start with a certain letter (choose one that exists for you, e.g. C in the example above).
+7. Write a SQL statement to select only countries that start with a certain letter (choose one that exists for you, e.g. 
+C in the example above).
 """
 
 # cursor.execute("""
@@ -170,11 +177,11 @@ Add at least 10 countries, as diverse as possible (INSERT). Examples:
 """
 8. Write a SQL statement that groups all countries by continents, and counts them.
 """
-
+#
 # cursor.execute("""
-# SELECT COUNT(country_name), country_code
+# SELECT COUNT(country_name), continent_id
 # FROM countries
-# GROUP BY country_code
+# GROUP BY continent_id
 # ORDER BY COUNT(country_name);
 # """)
 #
@@ -187,9 +194,9 @@ Add at least 10 countries, as diverse as possible (INSERT). Examples:
 """
 
 # cursor.execute("""
-# SELECT SUM(population), country_code
+# SELECT SUM(population), continent_id
 # FROM countries
-# GROUP BY country_code
+# GROUP BY continent_id
 # ORDER BY SUM(population);
 # """)
 #
