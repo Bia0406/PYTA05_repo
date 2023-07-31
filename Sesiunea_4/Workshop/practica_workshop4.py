@@ -1,6 +1,6 @@
 """
 OOP - advance
-Exerciții - studiu în workshopul de weekend
+Exerciții  workshop
 """
 
 
@@ -124,8 +124,9 @@ class Cerc(FormaGeometrica):
 
 '''
 4. POLYMORPHISM Definește o nouă metodă descrie - printează ‘Eu nu am colturi’
-Creează un obiect de tip Pătrat și joacă-te cu metodele lui Creează un obiect de tip Cerc și joacă-te cu metodele lui3.
+Creează un obiect de tip Pătrat și joacă-te cu metodele lui.Creează un obiect de tip Cerc și joacă-te cu metodele lui.
 '''
+
 # patrat2 = Patrat(4)
 # print(patrat2.aria())
 # patrat2.descrie()

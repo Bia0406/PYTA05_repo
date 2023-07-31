@@ -1,14 +1,14 @@
-import sqlite3
 """
-
 1. Write a SQL statement to create a table called continents, with the following columns:
 continent_id
 continent_name
 continent_code – 2 letters code, use this link: https://datahub.io/core/continent-codes
 """
+import sqlite3
 
-# connection = sqlite3.connect("continents_practice1.db")
-# cursor = connection.cursor()
+connection = sqlite3.connect("continents_practice1.db")
+
+cursor = connection.cursor()
 
 
 # cursor.execute(
@@ -28,10 +28,6 @@ continent_code – 2 letters code, use this link: https://datahub.io/core/contin
 """
 2. Using the link above, write all SQL statements needed to add all the seven continents (INSERT).
 """
-
-# connection = sqlite3.connect("continents_practice1.db")
-
-# cursor = connection.cursor()
 
 # continent_query = """
 # INSERT INTO continents (continent_name, continent_code)
@@ -59,10 +55,6 @@ country_name
 continent_id – foreign key
 population – number
 """
-
-# connection = sqlite3.connect("continents_practice1.db")
-
-# cursor = connection.cursor()
 
 # cursor.execute(
 #     """
@@ -96,11 +88,6 @@ Add at least 10 countries, as diverse as possible (INSERT). Examples:
 – Australia, OC, 25mil
 """
 
-
-# connection = sqlite3.connect("continents_practice1.db")
-
-# cursor = connection.cursor()
-
 # country_query = """
 # INSERT INTO countries (country_code, country_name, continent_id, population)
 # VALUES (?, ?, ?, ?);
@@ -125,27 +112,21 @@ Add at least 10 countries, as diverse as possible (INSERT). Examples:
 """
 5. Write a SQL statement to select all countries, ordered by name. Write another statement to count them all.
 """
-
-# connection = sqlite3.connect("continents_practice1.db")
-
-# cursor = connection.cursor()
-
+#
 # cursor.execute("""
-# SELECT country_name FROM countries
+# SELECT * FROM countries
 # ORDER By country_name;
 # """)
 #
-# countries = cursor.fetchall()
-# print(countries)
+# print(cursor.fetchall())
 #
 #
 # cursor.execute("""
-# SELECT COUNT(country_name)
+# SELECT COUNT(*)
 # FROM countries;
 # """)
 #
-# country_name = cursor.fetchall()
-# print(country_name)
+# print(cursor.fetchall())
 
 
 """
@@ -153,7 +134,7 @@ Add at least 10 countries, as diverse as possible (INSERT). Examples:
 """
 
 # cursor.execute("""
-# SELECT country_name FROM countries
+# SELECT * FROM countries
 # WHERE population > 20000000;
 # """)
 #
@@ -166,7 +147,7 @@ C in the example above).
 """
 
 # cursor.execute("""
-# SELECT country_name FROM countries
+# SELECT * FROM countries
 # WHERE country_name LIKE 'C%' ;
 # """)
 #
@@ -177,16 +158,15 @@ C in the example above).
 """
 8. Write a SQL statement that groups all countries by continents, and counts them.
 """
-#
+
 # cursor.execute("""
-# SELECT COUNT(country_name), continent_id
+# SELECT continents.continent_name, COUNT(countries.country_name)
 # FROM countries
-# GROUP BY continent_id
-# ORDER BY COUNT(country_name);
+# INNER JOIN continents ON countries.continent_id = continents.continent_id
+# GROUP BY continents.continent_name;
 # """)
 #
-# country_code = cursor.fetchall()
-# print(country_code)
+# print(cursor.fetchall())
 
 
 """
@@ -194,17 +174,13 @@ C in the example above).
 """
 
 # cursor.execute("""
-# SELECT SUM(population), continent_id
+# SELECT continents.continent_name, SUM(countries.population)
 # FROM countries
-# GROUP BY continent_id
-# ORDER BY SUM(population);
+# INNER JOIN continents ON countries.continent_id = continents.continent_id
+# GROUP BY continents.continent_name;
 # """)
 #
-# population_continents = cursor.fetchall()
-# print(population_continents)
-#
-# connection.close()
-
+# print(cursor.fetchall())
 
 """
 Extra exercises can be found online:

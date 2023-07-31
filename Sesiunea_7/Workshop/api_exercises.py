@@ -71,7 +71,7 @@ print(response4.json())
 
 # class BooksAPIClient:
 #
-#     token = "5541846c096e8b0b7f5c7ee719ca98cc660ea16664aa5d3bb415783e55cbda2c"
+#     token = "666b0a2a989a4c070edd04bbd8ff046d2749655996367194c5e7d3784e30fe49"
 #     __BASE_URL = 'https://simple-books-api.glitch.me'
 #
 #     def __init__(self, client_name, client_email):
@@ -117,7 +117,7 @@ print(response4.json())
 # print(response1.status_code)
 # print(response1.json())
 #
-# token = "5ef6aa91653030a7a3450d9b20388282d85446ecf82f4babcb787c984fe4cabf"
+# token = "666b0a2a989a4c070edd04bbd8ff046d2749655996367194c5e7d3784e30fe49"
 #
 # get all books
 # avem posibilitatea (este OPTIONAL) sa furnizam query params: limit si type

@@ -12,49 +12,53 @@ reverse(10000000) => 1
 reverse(-65) => eroare
 """
 
-#
-# def numbers(n):
-#     result = 0
-#     if n < 0:
-#         n *= 0
-#     repeat = len(str(n))
-#
-#     for x in range(repeat):
-#         mod = n % 10
-#         n //= 10
-#         result = result * 10 + mod
-#     if n < 0:
-#         result *= -1
-#     return result
-#
-#
-# print(numbers(1234))
-# print(numbers(-6545))
+
+# def reverse(n):
+#     if n >= 0:
+#         a = str(n)
+#         b = a[::-1]
+#         c = int(b)
+#         return c
+#     else:
+#         raise ValueError("Numarul nu este pozitiv!")
 
 
-# def reverse(num):
-#     return int(('-' if num < 0 else '') + str(abs(num))[::-1])
-#
-#
-# print(reverse(123456789))
+# print(reverse(1234567))
+# print(reverse(-65))
 
 """
 2. Creaza o functie Python care primește o lista și un număr întreg pozitiv k, si roteste lista cu k pozitii. 
 Exemple: 
-rotate([1, 2, 3, 4, 5], 2) => [3, 4, 5, 1, 2] 
-rotate([1, 2, 3, 4, 5], 4) => [5, 1, 2, 3, 4] 
+rotate([1, 2, 3, 4, 5], 1) => [2, 3, 4, 5, 1]
+rotate([1, 2, 3, 4, 5], 2) => [3, 4, 5, 1, 2]
+rotate([1, 2, 3, 4, 5], 4) => [5, 1, 2, 3, 4]
+rotate([1, 2, 3, 4, 5], 3) => [4, 5, 1, 2, 3]
 rotate([1, 2, 3, 4, 5], 8) => [4, 5, 1, 2, 3]
+rotate([1, 2, 3, 4, 5], 5) => [1, 2, 3, 4, 5]
+rotate([1, 2, 3, 4, 5], 6) => [2, 3, 4, 5, 1]
+rotate([1, 2, 3, 4, 5], 7) => [3, 4, 5, 1, 2]
 """
 
+# v1
+# def rotate(lista, k):
+#     k = k % len(lista)
+#     lista2 = lista[k:] + lista[0:k]
+#     print(lista2)
 #
-# def rotate(x, y):
-#     return x[y:] + x[:y]
+#
+# rotate([1, 2, 3, 4, 5], 8)
+
+# v2
+# from collections import deque
 #
 #
-# list = [1, 2, 3, 4, 5]
+# def rot(lista,k):
+#     deque_list = deque(lista)
+#     deque_list.rotate(-k)
+#     return list(deque_list)
 #
-# list1 = rotate(list, 2)
-# print(list1)
+#
+# print(rot([1, 2, 3, 4, 5], 8))
 
 """
 3. Creaza o functie Python care primește 2 stringuri, și verifica dacă acestea sunt anagrame (case-insensitive). 
@@ -65,19 +69,16 @@ is_anagram(‘Stringy’, ‘gringsty’) => False
 is_anagram(‘ana’, ‘ioana’) => False
 """
 
-#
-# def is_anagram(string1, string2):
-#     if len(string1) == len(string2):
-#         print("True")
+# def is_anagram(str1, str2):
+#     if sorted(str1.upper()) == sorted(str2.upper()):
+#         print("Sunt anagrams.")
 #     else:
-#         print("False")
+#         print("The strings aren't anagrams.")
 #
 #
-# is_anagram('Adela', 'ealad')
-# is_anagram('ITFactory', 'acfiorty')
-# is_anagram('Stringy', 'gringsty')
-# is_anagram('ana', 'ioana')
-
+# str1 = input("string1 =  ")
+# str2 = input("string2 = ")
+# is_anagram(str1, str2)
 
 """
 4. Creaza o functie Python care primeste o lista de numere, si il returneaza pe al doilea cel mai mare numar distinct. 
@@ -117,7 +118,7 @@ add_two(‘1234’, ‘4321’) => ‘5555’
 add_two(‘563895634’, ‘548967348053’) => ‘549531243687’
 """
 
-
+#
 # def add_two(str1, str2):
 #
 #     result = ""
@@ -137,15 +138,14 @@ find_missing(2, [1]) => 2
 find_missing(7, [6,5,1,3,2,7]) => 4
 """
 
-#
-# def find_missing(n, []):
-#     n-1 == []
-#     for i in find_missing(2, 100):
-#         print(i)
+
+# def find_missing(n, *karg):
+#     n = [n-1]
+#     for i in range(1, 8):
+#         print([i])
 #
 #
 # print(find_missing(5, [1, 2, 3, 5]))
-
 
 
 """
@@ -163,3 +163,33 @@ Mo Tu We Th Fr Sa Su
 -> get_day_of_week(zi, luna) - va returna ce zi din saptamna este, exemplu ‘Marti’ 
 -> get_days_in_month(luna) - va returna numarul de zile din luna respectivă;
 """
+# import calendar
+#
+# year = 2023
+# month = 7
+
+
+# class Calendar:
+#
+#     def __init__(self, year):
+#         self.firstweekday = None
+#         self.month = None
+#         self.day = None
+#         self.year = year
+#
+#     def get_day_of_week(self, day, month, firstweekday):
+#         self.day = day
+#         self.month = month
+#         self.firstweekday = firstweekday
+#
+#     obj = calendar.Calendar(firstweekday=0)
+#
+#     for day in obj.iterweekdays():
+#         print(day)
+#
+#     def get_days_in_month(self,month):
+#         pass
+
+
+# print(calendar.month(year, month))
+# print(calendar.calendar(year))
