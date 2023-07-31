@@ -113,10 +113,12 @@ print(car1.color)
 def multiply(a, b=2):
     return a * b
 
+
 print(multiply(1, 5))
 print(multiply(4))
 
 # clase
+
 
 class Employee:
 
@@ -128,6 +130,7 @@ class Employee:
     def describe(self):
         print(f"{self.name} lucreaza la aceasta companie de {self.working_experience} ani.")
 
+
 employee1 = Employee("Ana",30,5)
 employee1.describe()
 
@@ -137,11 +140,13 @@ student1.working_experience = 2
 print(student1.working_experience)
 student1.describe()
 
+
 class Complex:
 
     def __init__(self, real, imag):
         self.r = real
         self.i = imag
+
 
 z = Complex(3.0, -4.5)
 
