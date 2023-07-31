@@ -163,33 +163,33 @@ Mo Tu We Th Fr Sa Su
 -> get_day_of_week(zi, luna) - va returna ce zi din saptamna este, exemplu ‘Marti’ 
 -> get_days_in_month(luna) - va returna numarul de zile din luna respectivă;
 """
-# import calendar
-#
-# year = 2023
-# month = 7
+import calendar
+
+year = 2023
+month = 7
 
 
-# class Calendar:
-#
-#     def __init__(self, year):
-#         self.firstweekday = None
-#         self.month = None
-#         self.day = None
-#         self.year = year
-#
-#     def get_day_of_week(self, day, month, firstweekday):
-#         self.day = day
-#         self.month = month
-#         self.firstweekday = firstweekday
-#
-#     obj = calendar.Calendar(firstweekday=0)
-#
-#     for day in obj.iterweekdays():
-#         print(day)
-#
-#     def get_days_in_month(self,month):
-#         pass
+class Calendar:
+
+    def __init__(self, year):
+        self.firstweekday = None
+        self.month = None
+        self.day = None
+        self.year = year
+
+    def get_day_of_week(self, day, month, firstweekday):
+        self.day = day
+        self.month = month
+        self.firstweekday = firstweekday
+
+    obj = calendar.Calendar(firstweekday=0)
+
+    for day in obj.iterweekdays():
+        print(day)
+
+    def get_days_in_month(self,month):
+        pass
 
 
-# print(calendar.month(year, month))
-# print(calendar.calendar(year))
+print(calendar.month(year, month))
+print(calendar.calendar(year))
